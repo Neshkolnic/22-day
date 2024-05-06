@@ -152,5 +152,51 @@ namespace _22_day
             Form2 frm = new Form2();
             frm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string databaseName = "ConfectioneryDB";
+
+            // Строка подключения к экземпляру SQL Server Express LocalDB
+            string connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True";
+
+            // SQL-скрипт для создания базы данных и таблиц, если их нет
+            string script = $@"
+                IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = '{databaseName}')
+                BEGIN
+                    CREATE DATABASE {databaseName};
+                    USE {databaseName};
+
+                    -- Создание таблицы Продукты
+                    CREATE TABLE Products (
+                        ProductID INT PRIMARY KEY IDENTITY,
+                        ProductName NVARCHAR(100),
+                        Description NVARCHAR(MAX),
+                        Price DECIMAL(10, 2),
+                        Image VARBINARY(MAX)
+                    );
+
+                    -- Создание других необходимых таблиц
+                END";
+
+            try
+            {
+                // Подключение к экземпляру SQL Server Express LocalDB
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Выполнение скрипта
+                    SqlCommand command = new SqlCommand(script, connection);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("База данных и таблицы созданы успешно.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при создании базы данных и таблиц: " + ex.Message);
+            }
+        }
     }
 }

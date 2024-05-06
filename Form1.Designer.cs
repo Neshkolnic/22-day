@@ -68,6 +68,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.confectioneryDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -221,14 +222,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.productsBindingNavigatorSaveItem});
-            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 30);
+            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 28);
             this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productsBindingNavigator.Name = "productsBindingNavigator";
             this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(764, 31);
+            this.productsBindingNavigator.Size = new System.Drawing.Size(764, 27);
             this.productsBindingNavigator.TabIndex = 5;
             this.productsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -334,7 +335,7 @@
             this.ordersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(764, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -357,7 +358,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorDeleteItem
@@ -426,10 +427,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(631, 48);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 29);
+            this.button2.TabIndex = 7;
+            this.button2.Text = " Create bd";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(764, 507);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.productsBindingNavigator);
             this.Controls.Add(this.menuStrip1);
@@ -495,6 +507,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
 
